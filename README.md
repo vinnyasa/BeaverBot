@@ -1,0 +1,2 @@
+# BeaverBuddy
+Virtual Classroom Assistant 
