@@ -15,22 +15,22 @@ class APIRequest:
         response = client.query(input)
 
         # show answer
-        print next(response.results).text
+        print (next(response.results).text)
 
     def fetchWikipedia(self, input):
         # show result
-        print wikipedia.summary(input)
+        print (wikipedia.summary(input))
 
     def getResponse(self):
         while True:
-            input = raw_input("How can I help? ")
+            param = input("How can I help? ")
 
             try:
                 # wolframalpha
-                self.fetchWolfram(input)
+                self.fetchWolfram(param)
             except:
                 # wikipedia
-                self.fetchWikipedia(input)
+                self.fetchWikipedia(param)
 
 apiRequest = APIRequest()
 apiRequest.getResponse()
