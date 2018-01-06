@@ -16,4 +16,4 @@ def  fetchWolfram():
     # show answer
     print next(response.results).text
 
-fetchWolfram()
+#fetchWolfram()
