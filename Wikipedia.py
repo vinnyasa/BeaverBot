@@ -13,4 +13,4 @@ def fetchWikipedia():
     print wikipedia.summary(input)
 
 
-fetchWikipedia() 
+#fetchWikipedia()
