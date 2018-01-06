@@ -28,7 +28,7 @@ class APIRequest:
             try:
                 # wolframalpha
                 self.fetchWolfram(input)
-            except ValueError:
+            except:
                 # wikipedia
                 self.fetchWikipedia(input)
 
