@@ -8,10 +8,7 @@ import wolframalpha
 
 class APIRequest:
 
-    def fetchWolfram(self):
-        # promp user for a question
-
-        input = raw_input("How can I help? ")
+    def fetchWolfram(self, input):
         # request to api
         client = wolframalpha.Client("W7R5JE-T5TL7U6P8V")  # hide this.
 
@@ -20,21 +17,20 @@ class APIRequest:
         # show answer
         print next(response.results).text
 
-    def fetchWikipedia(self):
-        # promp user
-        input = raw_input("What can we learn about today? ")
-
+    def fetchWikipedia(self, input):
         # show result
         print wikipedia.summary(input)
 
     def getResponse(self):
+        while True:
+            input = raw_input("How can I help? ")
 
-        try:
-            # wolframalpha
-            self.fetchWolfram()
-        except ValueError:
-            # wikipedia
-            self.fetchWikipedia()
+            try:
+                # wolframalpha
+                self.fetchWolfram(input)
+            except ValueError:
+                # wikipedia
+                self.fetchWikipedia(input)
 
 apiRequest = APIRequest()
 apiRequest.getResponse()
