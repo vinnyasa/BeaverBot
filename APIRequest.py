@@ -28,8 +28,12 @@ class APIRequest:
             return self.fetchWolfram(query)
 
         except:
-            # wikipedia
-            return self.fetchWikipedia(query)
+            try:
+                # wikipedia
+                return self.fetchWikipedia(query)
+
+            except:
+                return "I don't have an answer for that, sorry :( But Go Beavs!! :)"
 
 
 
