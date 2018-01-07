@@ -1,5 +1,5 @@
 import sys
-from PyQt5.QtWidgets import QApplication, QWidget, QLabel
+from PyQt5.QtWidgets import QApplication, QWidget, QLabel, QDialog, QGridLayout
 from PyQt5.QtGui import QIcon, QPixmap
 
 
@@ -18,11 +18,11 @@ class BeaverGUI(QWidget):
         self.setWindowTitle(self.title)
         self.setGeometry(self.left, self.top, self.width, self.height)
 
-        # Create widget
+        # Create label for image
         label = QLabel(self)
         pixmap = QPixmap('beaver.png')
         label.setPixmap(pixmap)
-        self.resize(pixmap.width(), pixmap.height())
+        self.resize(pixmap.width() + 88, pixmap.height() + 250)
 
         self.show()
 
