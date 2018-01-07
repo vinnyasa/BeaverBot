@@ -25,6 +25,8 @@ class Ui_MainWindow(object):
         self.pushButton.setGeometry(QtCore.QRect(430, 390, 120, 32))
         self.pushButton.setObjectName("pushButton")
         self.pushButton.raise_()
+        # Connects button's clicked signal to function openClick
+        self.pushButton.clicked.connect(self.openClick)
         self.label.raise_()
         self.lineEdit.raise_()
         MainWindow.setCentralWidget(self.centralwidget)
@@ -49,6 +51,10 @@ class Ui_MainWindow(object):
 
     def updateTextField(self, text):
         self.lineEdit.setText(text)
+
+    def openClick(self):
+        # When button is clicked, calls getResponse function from APIRequest
+        APIRequest.getResponse()
 
 import BeaverSource_rc
 
