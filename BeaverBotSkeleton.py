@@ -7,6 +7,7 @@
 # WARNING! All changes made in this file will be lost!
 
 from PyQt5 import QtCore, QtGui, QtWidgets
+import APIRequest
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -21,7 +22,7 @@ class Ui_MainWindow(object):
         self.lineEdit.setGeometry(QtCore.QRect(302, 360, 341, 22))
         self.lineEdit.setObjectName("lineEdit")
         self.pushButton = QtWidgets.QPushButton(self.centralwidget)
-        self.pushButton.setGeometry(QtCore.QRect(430, 390, 93, 28))
+        self.pushButton.setGeometry(QtCore.QRect(430, 390, 120, 32))
         self.pushButton.setObjectName("pushButton")
         self.pushButton.raise_()
         self.label.raise_()
@@ -43,6 +44,11 @@ class Ui_MainWindow(object):
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
         self.label.setText(_translate("MainWindow", "<html><head/><body><p align=\"center\"><img src=\":/BeaverImage/beaver.png\"/></p></body></html>"))
         self.pushButton.setText(_translate("MainWindow", "Beaver Power!"))
+        self.updateTextField("Hello, I am Beaver Bot, the classroom assistant. How can I help? ")
+
+
+    def updateTextField(self, text):
+        self.lineEdit.setText(text)
 
 import BeaverSource_rc
 
