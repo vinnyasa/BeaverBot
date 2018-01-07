@@ -34,6 +34,7 @@ class Ui_MainWindow(object):
         #responseField
         self.textEdit = QtWidgets.QTextEdit(self.centralwidget)
         self.textEdit.setObjectName("textEdit")
+        # Sets response box to read only
         self.textEdit.setReadOnly(True)
         self.gridLayout.addWidget(self.textEdit, 2, 7, 1, 1)
         spacerItem3 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
