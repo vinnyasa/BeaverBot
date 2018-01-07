@@ -23,16 +23,15 @@ class APIRequest:
         return wikipedia.summary(input)
 
     def getResponse(self, query):
-        while True:
-            #param = input("How can I help? ")
+        try:
+            # wolframalpha
+            return self.fetchWolfram(query)
 
-            try:
-                # wolframalpha
-                return self.fetchWolfram(query)
+        except:
+            # wikipedia
+            return self.fetchWikipedia(query)
 
-            except:
-                # wikipedia
-                return self.fetchWikipedia(query)
+
 
 
 #apiRequest = APIRequest()
