@@ -7,7 +7,8 @@
 # WARNING! All changes made in this file will be lost!
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-import APIRequest
+from APIRequest import APIRequest
+import os
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -26,7 +27,7 @@ class Ui_MainWindow(object):
         self.pushButton.setObjectName("pushButton")
         self.pushButton.raise_()
         # Connects button's clicked signal to function openClick
-        self.pushButton.clicked.connect(self.openClick)
+        self.pushButton.clicked.connect(self.beaverPowerPressed)
         self.label.raise_()
         self.lineEdit.raise_()
         MainWindow.setCentralWidget(self.centralwidget)
@@ -52,9 +53,24 @@ class Ui_MainWindow(object):
     def updateTextField(self, text):
         self.lineEdit.setText(text)
 
-    def openClick(self):
+    def beaverPowerPressed(self):
+        input = self.lineEdit.text()
+        print(input)
+
+        #sample audio, but still need to fix what will go to audio
+        os.system("say thank you for your question " + input)
+
         # When button is clicked, calls getResponse function from APIRequest
-        APIRequest.getResponse()
+        api = APIRequest()
+        response = api.getResponse(input)
+        print(response)
+
+        #update textField with current response, also when done it should be cleared
+        self.updateTextField(response)
+        stringResponse = str(response)
+
+        #need the type of the response so can convert to string to use in speech
+        #os.system("say the answer is  " + stringResponse)
 
 import BeaverSource_rc
 
