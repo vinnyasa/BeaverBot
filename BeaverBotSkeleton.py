@@ -47,7 +47,7 @@ class Ui_MainWindow(object):
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
         self.label.setText(_translate("MainWindow", "<html><head/><body><p align=\"center\"><img src=\":/BeaverImage/beaver.png\"/></p></body></html>"))
         self.pushButton.setText(_translate("MainWindow", "Beaver Power!"))
-        self.updateTextField("Hello, I am Beaver Bot, the classroom assistant. How can I help? ")
+        self.updateTextField("Hello, I am Beaver Bot,  How can I help? ")
 
 
     def updateTextField(self, text):
