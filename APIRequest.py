@@ -5,7 +5,6 @@
 
 import wikipedia
 import wolframalpha
-import  os
 
 
 class APIRequest:
@@ -23,21 +22,21 @@ class APIRequest:
         # show result
         return wikipedia.summary(input)
 
-    def getResponse(self):
+    def getResponse(self, query):
         while True:
-            param = input("How can I help? ")
+            #param = input("How can I help? ")
 
             try:
                 # wolframalpha
-                return self.fetchWolfram(param)
+                return self.fetchWolfram(query)
 
             except:
                 # wikipedia
-                return self.fetchWikipedia(param)
+                return self.fetchWikipedia(query)
 
 
 #apiRequest = APIRequest()
-##answer = apiRequest.getResponse()
+#answer = apiRequest.getResponse()
 
 #print(answer)
 #os.system("say the answer is  " + answer)
