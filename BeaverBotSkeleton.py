@@ -24,6 +24,8 @@ class Ui_MainWindow(object):
         self.pushButton.setGeometry(QtCore.QRect(430, 390, 93, 28))
         self.pushButton.setObjectName("pushButton")
         self.pushButton.raise_()
+        # Connects button's clicked signal to function openClick
+        self.pushButton.clicked.connect(self.openClick)
         self.label.raise_()
         self.lineEdit.raise_()
         MainWindow.setCentralWidget(self.centralwidget)
@@ -43,6 +45,10 @@ class Ui_MainWindow(object):
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
         self.label.setText(_translate("MainWindow", "<html><head/><body><p align=\"center\"><img src=\":/BeaverImage/beaver.png\"/></p></body></html>"))
         self.pushButton.setText(_translate("MainWindow", "Beaver Power!"))
+
+    def openClick(self):
+        # When button is clicked, calls getResponse function from APIRequest
+        APIRequest.getResponse()
 
 import BeaverSource_rc
 
