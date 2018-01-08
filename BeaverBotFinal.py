@@ -9,6 +9,7 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 from APIRequest import APIRequest
 import os
+from subprocess import call
 from gtts import gTTS
 
 class Ui_MainWindow(object):
@@ -131,9 +132,19 @@ class Ui_MainWindow(object):
 
 
     def beaverSpeech(self, text):
-        tts = gTTS(text= text, lang='en')
-        tts.save("beaver.mp3")
-        os.system("afplay beaver.mp3 &")
+        tts = gTTS(text=text, lang='en')
+        tts.save("voice.mp3")
+        print("should be saying ")
+        if sys.platform == 'linux2':
+            call(["xdg-open", "voice.mp3"])
+        elif sys.platform == 'darwin':
+            call(["afplay", "voice.mp3"])
+            print("in mac")
+
+
+        #tts = gTTS(text= text, lang='en')
+        #tts.save("beaver.mp3")
+        #os.system("afplay beaver.mp3 &")
 
 
 
