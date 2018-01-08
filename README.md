@@ -5,7 +5,7 @@ Code is written in Python 3.6 and uses Wolfram Alpha and Wikipedia APIs. The UI 
 ## Authors
 
 * **Vinny Harris-Riviello** - [vinnyasa](https://github.com/vinnyasa)
-* **Kat Chow** - [katrinechow](https://github.com/katrinechow)
+* **Katrine Chow** - [katrinechow](https://github.com/katrinechow)
 * **Kristin Wood** - [woodkri](https://github.com/woodkri)
 
 ## License
