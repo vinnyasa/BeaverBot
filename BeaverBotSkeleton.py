@@ -8,7 +8,10 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 from APIRequest import APIRequest
+
 import os
+from gtts import gTTS
+
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -56,21 +59,19 @@ class Ui_MainWindow(object):
     def beaverPowerPressed(self):
         input = self.lineEdit.text()
         print(input)
-
-        #sample audio, but still need to fix what will go to audio
-        os.system("say thank you for your question " + input)
-
+        self.beaverGtts(input)
         # When button is clicked, calls getResponse function from APIRequest
         api = APIRequest()
         response = api.getResponse(input)
         print(response)
-
         #update textField with current response, also when done it should be cleared
         self.updateTextField(response)
-        stringResponse = str(response)
+        self.beaverGtts(response)
 
-        #need the type of the response so can convert to string to use in speech
-        #os.system("say the answer is  " + stringResponse)
+    def beaverGtts(self, text):
+        tts = gTTS(text= text, lang='en')
+        tts.save("good.mp3")
+        os.system("afplay good.mp3 &")
 
 import BeaverSource_rc
 

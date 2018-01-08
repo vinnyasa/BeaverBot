@@ -38,10 +38,4 @@ class APIRequest:
 
 
 
-#apiRequest = APIRequest()
-#answer = apiRequest.getResponse()
-
-#print(answer)
-#os.system("say the answer is  " + answer)
-
 

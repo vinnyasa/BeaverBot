@@ -8,6 +8,8 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 from APIRequest import APIRequest
+import os
+from gtts import gTTS
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -110,25 +112,28 @@ class Ui_MainWindow(object):
         self.lineEdit.setPlaceholderText(_translate("MainWindow", "I am Beaver Bot. How may I help?"))
         self.pushButton.setToolTip(_translate("MainWindow", "<html><head/><body><p>Beaver Bot to the Rescue!</p></body></html>"))
         self.pushButton.setText(_translate("MainWindow", "Beaver Power!"))
+        hello = "hello my name is Beaver Bot, how can I help?"
+        self.beaverSpeech(hello)
 
     def updateResponseField(self, text):
         self.textEdit.setText(text)
 
     def beaverPowerClicked(self):
         input = self.lineEdit.text()
-        print(input)
-
-        # sample audio, but still need to fix what will go to audio, will be switching to google-speech
-        # os.system("say thank you for your question " + input)
 
         # When button is clicked, calls getResponse function from APIRequest
         api = APIRequest()
         response = api.getResponse(input)
-        print(response)
-
-        # update textField with current response, also when done it should be cleared
         self.updateResponseField(response)
-        stringResponse = str(response)
+
+        #update lineEdit
+        self.lineEdit.clear()
+
+
+    def beaverSpeech(self, text):
+        tts = gTTS(text= text, lang='en')
+        tts.save("beaver.mp3")
+        os.system("afplay beaver.mp3 &")
 
 
 
