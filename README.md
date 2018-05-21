@@ -14,7 +14,7 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 ## Acknowledgments
 
-Inspired by Learn Python: Build a Virtual Assistant course on Udemy, but we created our own code and it is using a different Python version.
+Idea inspired by Learn Python: Build a Virtual Assistant course, but we created our own code and it is using a different Python version.
 Thanks for the beaver image, provided by: Freepik at http://www.freepik.com
 
 To build run BeaverBotFinal.py
