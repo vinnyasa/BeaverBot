@@ -19,3 +19,6 @@ Thanks for the beaver image, provided by: Freepik at http://www.freepik.com
 
 To build run BeaverBotFinal.py
 
+# Video and Submission
+
+https://devpost.com/software/beaverbot
